@@ -25,12 +25,14 @@ int vocal(int n) {
 int main () {
 	int num;
 	char v;
-	cout << "Ingrese un numero del 1 al 5: ";
-	cin >> num;
-	v = vocal(num);
-	if (num>=1 & num<=5) {
-		cout << v;
-		 } else {
-		cout << "Debe ingresar un numero del 1 al 5.";
-	}                                   
+	do{
+		cout << "Ingrese un numero del 1 al 5: ";
+		cin >> num;
+		v = vocal(num);
+		if (num>=1 & num<=5) {
+			cout << v;
+		} else {
+		cout << "Debe ingresar un numero del 1 al 5. Intente nuevamente."<<endl;
+		}
+	}while(num<1 or num>5);
 }
