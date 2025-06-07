@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
-double calcularPrecioVenta(double precioCompra, double porcentajeGanancia) {
-    return precioCompra * (1 + porcentajeGanancia / 100.0);
+double obtenerPrecioVenta(double precioCompra, double porcentajeGanancia) {
+    const double PORCENTAJE_TOTAL = 100.0;
+    return precioCompra * (1 + porcentajeGanancia / PORCENTAJE_TOTAL);
 }
 int main() {
     double precioCompra, porcentajeGanancia;
@@ -9,8 +10,9 @@ int main() {
     cin >> precioCompra;
     cout << "Ingrese el porcentaje de ganancia: ";
     cin >> porcentajeGanancia;
-    double precioVenta = calcularPrecioVenta(precioCompra, porcentajeGanancia);
+    double precioVenta = obtenerPrecioVenta(precioCompra, porcentajeGanancia);
     cout << "El precio de venta es: " << precioVenta << endl;
     return 0;
 }
+
 
