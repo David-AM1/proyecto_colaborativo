@@ -18,9 +18,13 @@ int main() {
     cin >> z;
     int mayor = mayorDeTres(x, y, z);
     cout << "El mayor es: " << mayor << endl;
-    cout<<"¿Desea volver a intentar con otros valores? (s/n): ";
-    cin >> respuesta;
+    do{
+		cout<<"¿Desea volver a intentar con otros valores? (s/n): ";
+    	cin >> respuesta;
+    	if (respuesta != 's' and respuesta != 'n'){
+    		cout<<"Debe responder solo con (s/n)."<<endl;
+		}
+	}while(respuesta != 's' and respuesta != 'n');
 	}while(respuesta=='s');
-    return 0;
 }
 
