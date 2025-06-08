@@ -1,7 +1,10 @@
 #include <iostream>
 using namespace std;
 int calcularCalificacionFinal(int conocimiento, int desempeno, int producto) {
-    int calificacionFinal = (conocimiento * 40 + desempeno * 35 + producto * 25) / 100;
+    int aporteConocimiento = conocimiento * 40 / 100;
+    int aporteDesempeno = desempeno * 35 / 100;
+    int aporteProducto = producto * 25 / 100;
+    int calificacionFinal = aporteConocimiento + aporteDesempeno + aporteProducto;
     return calificacionFinal;
 }
 int main() {
