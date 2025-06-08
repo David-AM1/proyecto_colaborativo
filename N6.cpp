@@ -1,26 +1,31 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() {
-    int tt;
-    float ca, cu;
-    cout<<"ingrese el credito actual de la tarjeta: "<<endl;
-    cin>>ca;
-    cout<<"ingresse el tipo de tarjeta"<<endl;
-    cin>>tt;
-    if (tt == 1){
-        cu=ca+(ca*0.25);
-    }
-    else if (tt == 2){
-        cu=ca+(ca*0.35);
-    }
-    else if (tt == 3){
-        cu=ca+(ca*0.40);
-    }
-    else {
-        cu=ca+(ca*0.50);
+double limiteCredito(int a, double b) {
+	switch (a) {
+		case 1:
+			b = b * 1.25;
+			break;
+		case 2:
+			b = b * 1.35;
+			break;
+		case 3:
+			b = b * 1.4;
+			break;
+		default:
+			b = b * 1.5;
+			break;
 	}
-    cout<<"el nuevo credito es: "<<cu<<endl;
+	return b;
+}
 
-    return 0;
+int main () {
+	double tipo, credito_actual, nuevo_credito;
+	cout << "Ingrese el tipo de tarjeta: ";
+	cin >> tipo;
+	cout << "Ingrese el limite de credito actual: ";
+	cin >> credito_actual;
+	nuevo_credito = limiteCredito(tipo,credito_actual);
+	cout <<"El nuevo limite de credito es: " << nuevo_credito;
+	return 0;
 }
