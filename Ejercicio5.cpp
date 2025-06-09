@@ -5,13 +5,21 @@ double obtenerPrecioVenta(double precioCompra, double porcentajeGanancia) {
     return precioCompra * (1 + porcentajeGanancia / PORCENTAJE_TOTAL);
 }
 int main() {
-    double precioCompra, porcentajeGanancia;
-    cout << "Ingrese el precio de compra: ";
-    cin >> precioCompra;
-    cout << "Ingrese el porcentaje de ganancia: ";
-    cin >> porcentajeGanancia;
-    double precioVenta = obtenerPrecioVenta(precioCompra, porcentajeGanancia);
-    cout << "El precio de venta es: " << precioVenta << endl;
+    double precioCompra, porcentajeGanancia, precioVenta;
+    char r;
+    do{
+    	cout << "Ingrese el precio de compra: ";
+    	cin >> precioCompra;
+    	cout << "Ingrese el porcentaje de ganancia: ";
+    	cin >> porcentajeGanancia;
+    	precioVenta = obtenerPrecioVenta(precioCompra, porcentajeGanancia);
+    	cout << "El precio de venta es: " << precioVenta << endl;
+    	cout<<"¿Desea intentar nuevamente con otros datos? (s/n): ";
+    	cin>>r;
+    	if(r!='s' and r!='n'){
+    		cout<<"Respuesta invalida."<<endl;
+		}
+	}while(r=='s');
     return 0;
 }
 
