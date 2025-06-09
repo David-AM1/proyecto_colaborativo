@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 char numeroAVocal(int numero) {
-    switch (numero) {
-        case 1: return 'a';
-        case 2: return 'e';
-        case 3: return 'i';
-        case 4: return 'o';
-        case 5: return 'u';
-        default: return '?'; 
+    char vocales[] = {'a', 'e', 'i', 'o', 'u'};
+    if (numero >= 1 && numero <= 5) {
+        return vocales[numero - 1];  
+    } else {
+        return '?';  
     }
 }
 int main() {
